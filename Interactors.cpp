@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "const.h"
 
 
 void BeautifulInput (double* a, double* b, double* c) {

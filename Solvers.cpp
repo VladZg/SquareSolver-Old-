@@ -1,4 +1,6 @@
 #include <math.h>
+#include "const.h"
+
 
 int CompareDoubleWithZero (double a) {
 
@@ -32,12 +34,12 @@ int SquareSolver (double a, double b, double c, double* x1, double* x2) {
         double d = b*b - 4*a*c;
 
         if (d > 0.0)
-            {
+        {
             *x1 = (-b + sqrt (d) ) / 2 / a;
             *x2 = (-b - sqrt (d) ) / 2 / a;
 
             return 2;
-            }
+        }
 
         else if (CompareDoubleWithZero(d))
             {
@@ -47,5 +49,5 @@ int SquareSolver (double a, double b, double c, double* x1, double* x2) {
             }
 
         else return 0;
-        }
     }
+}

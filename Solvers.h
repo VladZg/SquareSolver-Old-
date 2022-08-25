@@ -1,5 +1,7 @@
+#include "const.h"
+
 int CompareDoubleWithZero (double a);
 
-void BeautifulInput (double* a, double* b, double* c);
+int LinearSolver (double b, double c, double* x1);
 
-void BeautifulOutput (int n_root, double x1, double x2, double a, double b , double c);
+int SquareSolver (double a, double b, double c, double* x1, double* x2);
