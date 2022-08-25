@@ -6,7 +6,8 @@
 #include <math.h>
 #include "Solvers.h"
 #include "Interactors.h"
-#include "const.h"
+#include "Consts.h"
+#include "ColourConsts.h"
 
 int main () {
 

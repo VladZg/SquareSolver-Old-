@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "const.h"
+#include "Consts.h"
+#include "ColourConsts.h"
 
 
 void BeautifulInput (double* a, double* b, double* c) {
@@ -7,32 +8,32 @@ void BeautifulInput (double* a, double* b, double* c) {
 
         printf("Type 3 coefficients: ");
 
-        if (scanf("%lf %lf %lf", &*a, &*b, &*c) == 3)
+        if (scanf("%lg %lg %lg", &*a, &*b, &*c) == 3)
             break;
 
         while (getchar() != '\n')
             continue;
 
-        printf("Wrong format of input! Try again!\n\n");
+        printf("%sWrong format of input! Try again!%s\n\n", KRED, KNRM);
         }
     }
 
 void BeautifulOutput (int n_root, double x1, double x2, double a, double b , double c) {
 
-    printf("Solving equation %lf*x*x + %lf*x + %lf = 0\n", a, b, c);
+    printf("\n%sSolving equation %lg*x*x + %lg*x + %lg = 0%s\n\n", KBLU, a, b, c, KNRM);
 
     switch(n_root) {
 
-        case 0: printf("Equation has no roots...\n");
+        case 0: printf("%sEquation has no roots...%s\n", KGRN, KNRM);
             break;
 
-        case 1: printf("Equation has only 1 root: x = %lf\n", x1);
+        case 1: printf("%sEquation has only 1 root: x = %lg%s\n", KGRN, x1, KNRM);
             break;
 
-        case 2: printf("Equation has 2 roots: x1 = %.3lf, x2 = %.3lf\n", x1, x2);
+        case 2: printf("%sEquation has 2 roots: x1 = %lg, x2 = %lg%s\n", KGRN, x1, x2, KNRM);
             break;
 
-        case INF_R: printf("Equation has infinite number of roots!\n");
+        case INF_R: printf("%sEquation has infinite number of roots!%s\n", KGRN, KNRM);
             break;
         }
     }
