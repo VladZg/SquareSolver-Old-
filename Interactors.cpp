@@ -8,7 +8,7 @@ void BeautifulInput (double* a, double* b, double* c) {
 
         printf("Type 3 coefficients: ");
 
-        if (scanf("%lg %lg %lg", &*a, &*b, &*c) == 3)
+        if (scanf("%lg %lg %lg", a, b, c) == 3)
             break;
 
         while (getchar() != '\n')
