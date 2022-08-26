@@ -46,7 +46,7 @@ void TestSquareSolver ()
         i++;
     }
 
-    printf("\nNumber of right tests: %d from %d\n\n", n_right_tests, n_tests);
+    printf("\nNumber of successful tests: %d from %d\n\n", n_right_tests, n_tests);
 }
 
 
