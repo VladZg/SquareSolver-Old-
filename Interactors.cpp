@@ -24,26 +24,29 @@ void BeautifulInput (double* a, double* b, double* c)
         while (getchar() != '\n')
             continue;
 
-        printf("%sWrong format of input! Try again!%s\n\n", KRED, KNRM);
+        printf(KRED "Wrong format of input! Try again!\n\n" KNRM);
     }
 }
 
+
 void BeautifulOutput (int n_root, double x1, double x2, double a, double b , double c)
 {
-    printf("\n%sSolving equation %lg*x*x + %lg*x + %lg = 0%s\n\n", KBLU, a, b, c, KNRM);
+    printf(KBLU "\nSolving equation %lg*x*x + %lg*x + %lg = 0...\n\n" KNRM, a, b, c);
 
     switch (n_root)
     {
-        case 0: printf("%sEquation has no roots...%s\n", KGRN, KNRM);
+        case 0: printf(KGRN "Equation has no roots...\n" KNRM);
             break;
 
-        case 1: printf("%sEquation has only 1 root: x = %lg%s\n", KGRN, x1, KNRM);
+        case 1: printf(KGRN "Equation has only 1 root: x = %lg ...\n" KNRM, x1);
             break;
 
-        case 2: printf("%sEquation has 2 roots: x1 = %lg, x2 = %lg%s\n", KGRN, x1, x2, KNRM);
+        case 2: printf(KGRN "Equation has 2 roots: x1 = %lg, x2 = %lg ...\n" KNRM, x1, x2);
             break;
 
-        case INF_R: printf("%sEquation has infinite number of roots!%s\n", KGRN, KNRM);
+        case INF_R: printf(KGRN "Congratulations! Equation has infinite number of roots!..\n" KNRM);
             break;
     }
+
+    printf ("...and I am Groot.\n");
 }

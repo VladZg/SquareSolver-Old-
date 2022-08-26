@@ -12,6 +12,9 @@
 #include "ColourConsts.h"
 
 
+//! @brief Основная функция программы, решающей квадратное уравнение
+//! @version 1.0.0
+
 int main ()
 {
     int n_root = 0;

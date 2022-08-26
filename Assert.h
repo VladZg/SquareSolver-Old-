@@ -5,11 +5,15 @@
 
 #include "ColourConsts.h"
 
+
+//! @brief Макрос, печатающий сообщение об ошибке в заданном условии, если оно неверно
+//! @param[in] condition Проверяемое условие
+
 #define ASSERT(condition)                                                             \
         {                                                                             \
         if (!(condition))                                                             \
-            fprintf(stderr, "%sError in '%s' in line %d in file %s in %s%s\n",        \
-                    KRED, #condition, __LINE__, __FILE__, __PRETTY_FUNCTION__, KNRM); \
+            fprintf(stderr, KRED "Error in '%s' in line %d in file %s in %s\n" KNRM,  \
+                    #condition, __LINE__, __FILE__, __PRETTY_FUNCTION__);             \
         }
 
 #endif
