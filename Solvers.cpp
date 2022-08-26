@@ -1,49 +1,68 @@
-#include <math.h>
-#include "Consts.h"
 #include <stdio.h>
+#include <math.h>
+
+#include "Consts.h"
+#include "Assert.h"
 
 
-int CompareDoubleWithZero (double a) {
-
+int CompareDoubleWithZero (double a)
+{
     if (a == 0.0)
+    {
         return 1;
+    }
     else
+    {
         return 0;
     }
+}
 
-int LinearSolver (double b, double c, double* x1) {
+int LinearSolver (double b, double c, double* x1)
+{
+    ASSERT(x1 != NULL);
 
-    if (CompareDoubleWithZero(b)) {
-
+    if (CompareDoubleWithZero(b))
+    {
         return INF_R;
     }
 
-    else {
+    else
+    {
         *x1 = -c / b;
 
         return 1;
-        }
     }
+}
 
-int SquareSolver (double a, double b, double c, double* x1, double* x2) {
+int SquareSolver (double a, double b, double c, double* x1, double* x2)
+{
+    ASSERT(x1 != NULL);
+    ASSERT(x2 != NULL);
 
     if (CompareDoubleWithZero(a))
-        return LinearSolver(b, c, x1);
+        {
 
-    else {
+        return LinearSolver(b, c, x1);
+        }
+
+    else
+    {
         double d = b*b - 4*a*c;
 
-        if (d > 0.0) {
+        if (d > 0.0)
+        {
             *x1 = (-b + sqrt (d) ) / 2 / a;
             *x2 = (-b - sqrt (d) ) / 2 / a;
+
             return 2;
         }
 
-        else if (CompareDoubleWithZero(d)) {
+        else if (CompareDoubleWithZero(d))
+        {
             *x1 = *x2 = -b / 2 / a;
 
             return 1;
-            }
+        }
 
         else return 0;
     }

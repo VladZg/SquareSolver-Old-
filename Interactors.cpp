@@ -1,29 +1,39 @@
 #include <stdio.h>
+
 #include "Consts.h"
 #include "ColourConsts.h"
+#include "Assert.h"
 
 
-void BeautifulInput (double* a, double* b, double* c) {
-    while (true) {
+void BeautifulInput (double* a, double* b, double* c)
+{
+    while (true)
+    {
 
         printf("Type 3 coefficients: ");
 
         if (scanf("%lg %lg %lg", a, b, c) == 3)
+        {
+            ASSERT(a != NULL);
+            ASSERT(b != NULL);
+            ASSERT(c != NULL);
+
             break;
+        }
 
         while (getchar() != '\n')
             continue;
 
         printf("%sWrong format of input! Try again!%s\n\n", KRED, KNRM);
-        }
     }
+}
 
-void BeautifulOutput (int n_root, double x1, double x2, double a, double b , double c) {
-
+void BeautifulOutput (int n_root, double x1, double x2, double a, double b , double c)
+{
     printf("\n%sSolving equation %lg*x*x + %lg*x + %lg = 0%s\n\n", KBLU, a, b, c, KNRM);
 
-    switch(n_root) {
-
+    switch (n_root)
+    {
         case 0: printf("%sEquation has no roots...%s\n", KGRN, KNRM);
             break;
 
@@ -35,5 +45,5 @@ void BeautifulOutput (int n_root, double x1, double x2, double a, double b , dou
 
         case INF_R: printf("%sEquation has infinite number of roots!%s\n", KGRN, KNRM);
             break;
-        }
     }
+}
