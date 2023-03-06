@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "./Include/Solvers.h"
-#include "./Include/Consts.h"
-#include "./Include/ColourConsts.h"
+#include "../Include/Solvers.h"
+#include "../Include/Consts.h"
+#include "../Include/ColourConsts.h"
 
 //! @brief Функция, проводящая одиночное тестирования функции, решающей квадратные ур-я
 //! @param[in] test_n Количество найденных решений квадратного ур-я
@@ -50,7 +50,7 @@ void TestSquareSolver ()
     int n_tests = 0;
     double a = 0, b = 0, c = 0, n_r_exp = 0, x1_exp = 0, x2_exp = 0;
     int i = 1;
-    FILE *file_test_info = fopen("TestInfo.txt", "r");
+    FILE *file_test_info = fopen("./TestInfo.txt", "r");
 
     while (!feof(file_test_info))
     {
