@@ -8,8 +8,8 @@ To compile the project to file "main" run "Makefile" in the root directory
 
 ### Equation with 2 roots:
 
-![alt text](Figures/Example1.png)
+![Example 1](Figures/Example1.png)
 
 ### Equation with no roots:
 
-![alt text](Figures/Example1.png)
+![Example 2](Figures/Example2.png)
